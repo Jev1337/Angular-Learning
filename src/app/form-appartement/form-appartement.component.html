@@ -1,0 +1,94 @@
+<br>
+<div class="container mt-5">
+    <h1>Appartement</h1>
+    <form [formGroup]="appartForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="mb-3">
+            <label for="exampleInputname1" class="form-label">Appartement Number</label>
+            <input type="number" class="form-control" id="exampleInputname1" formControlName="appartNumber" [ngClass]="{'is-invalid': appartForm.get('appartNumber')?.invalid && appartForm.get('appartNumber')?.touched, 'is-valid': appartForm.get('appartNumber')?.valid && appartForm.get('appartNumber')?.touched}">
+            <div *ngIf="appartNumber?.invalid && appartNumber?.touched" class="invalid-feedback">
+                Please provide a valid appartement number.
+            </div>
+            <div *ngIf="appartNumber?.valid && appartNumber?.touched" class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputfloorNb1" class="form-label">Floor Number</label> 
+            <input type="number" class="form-control" id="exampleInputfloorNb1" formControlName="floor" [ngClass]="{'is-invalid': appartForm.get('floor')?.invalid && appartForm.get('floor')?.touched, 'is-valid': appartForm.get('floor')?.valid && appartForm.get('floor')?.touched}">
+            <div *ngIf="floor?.invalid && floor?.touched" class="invalid-feedback">
+                Please provide a valid floor number.
+            </div>
+            <div *ngIf="floor?.valid && floor?.touched" class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputsurface1" class="form-label">Surface</label>
+            <input type="number" class="form-control" id="exampleInputsurface1" formControlName="surface" [ngClass]="{'is-invalid': appartForm.get('surface')?.invalid && appartForm.get('surface')?.touched, 'is-valid': appartForm.get('surface')?.valid && appartForm.get('surface')?.touched}">
+            <div *ngIf="surface?.invalid && surface?.touched" class="invalid-feedback">
+                Please provide a valid surface.
+            </div>
+            <div *ngIf="surface?.valid && surface?.touched" class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Terrace</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="terrace" id="terraceYes" formControlName="terrace" value="yes">
+                <label class="form-check-label" for="terraceYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="terrace" id="terraceNo" formControlName="terrace" value="no">
+                <label class="form-check-label" for="terraceNo">
+                    No
+                </label>
+            </div>
+        </div>
+        <div class="mb-3" *ngIf="appartForm.get('terrace')?.value === 'yes'">
+            <label for="exampleInputterraceSurface1" class="form-label">Terrace Surface</label>
+            <input type="number" class="form-control" id="exampleInputterraceSurface1" formControlName="surfaceterrace" [ngClass]="{'is-invalid': appartForm.get('surfaceterrace')?.invalid && appartForm.get('surfaceterrace')?.touched, 'is-valid': appartForm.get('surfaceterrace')?.valid && appartForm.get('surfaceterrace')?.touched}">
+            <div *ngIf="surfaceterrace?.invalid && surfaceterrace?.touched" class="invalid-feedback">
+                Please provide a valid terrace surface.
+            </div>
+            <div *ngIf="surfaceterrace?.valid && surfaceterrace?.touched" class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" id="categoryS1" formControlName="category" value="S+1">
+                <label class="form-check-label" for="categoryS1">
+                    S+1
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" id="categoryS2" formControlName="category" value="S+2">
+                <label class="form-check-label" for="categoryS2">
+                    S+2
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" id="categoryS3" formControlName="category" value="S+3">
+                <label class="form-check-label" for="categoryS3">
+                    S+3
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputresidenceId1" class="form-label">Residence ID</label>
+            <input type="text" class="form-control" id="exampleInputresidenceId1" formControlName="ResidenceId" [ngClass]="{'is-invalid': appartForm.get('ResidenceId')?.invalid && appartForm.get('ResidenceId')?.touched, 'is-valid': appartForm.get('ResidenceId')?.valid && appartForm.get('ResidenceId')?.touched}">
+            <div *ngIf="ResidenceId?.invalid && ResidenceId?.touched" class="invalid-feedback">
+                Please provide a valid residence ID.
+            </div>
+            <div *ngIf="ResidenceId?.valid && ResidenceId?.touched" class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="appartForm.invalid">Submit</button>
+        <button type="button" class="btn btn-secondary" (click)="appartForm.reset()">Reset</button>
+    </form>
+</div>
