@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Update Voiture</h1>
+    <div *ngIf="updateVoitureForm">
+        <form [formGroup]="updateVoitureForm">
+            <div class="mb-3">
+              <label for="exampleInputmodele1" class="form-label">Modele</label>
+              <input type="text" class="form-control" formControlName="modele" id="exampleInputmodele1" aria-describedby="modeleHelp">
+              <div *ngIf="modele?.touched && modele?.errors?.['required']" class="alert alert-danger m-2">Modele is required.</div>
+              <div *ngIf="modele?.touched && modele?.errors?.['minlength']" class="alert alert-danger m-2">Modele must have at least 3 caracters.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputmarque1" class="form-label">Marque</label>
+                <input type="text" class="form-control" formControlName="marque" id="exampleInputmarque1" aria-describedby="marqueHelp">
+                <div *ngIf="marque?.touched && marque?.errors?.['required']" class="alert alert-danger m-2">Marque is required.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputcouleur1" class="form-label">Couleur</label>
+                <input type="text" class="form-control" formControlName="couleur" id="exampleInputcouleur1" aria-describedby="couleurHelp">
+                <div *ngIf="couleur?.touched && couleur?.errors?.['required']" class="alert alert-danger m-2">Couleur is required.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputprix1" class="form-label">Prix</label>
+                <input type="text" class="form-control" formControlName="prix" id="exampleInputprix1" aria-describedby="prixHelp">
+                <div *ngIf="prix?.touched && prix?.errors?.['required']" class="alert alert-danger m-2">Prix is required.</div>
+              </div>
+
+            
+            <button type="submit" class="btn btn-primary" [disabled]="updateVoitureForm.invalid" (click)="updateVoiture()" >Update Voiture</button>
+            
+
+          </form>
+    </div>
+</div>

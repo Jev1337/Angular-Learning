@@ -9,6 +9,10 @@ import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { AppartementComponent } from './appartement/appartement.component';
 import { FormAppartementComponent } from './form-appartement/form-appartement.component';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+import { VoitureComponent } from './voiture/voiture.component';
+import { AddVoitureComponent } from './add-voiture/add-voiture.component';
+import { UpdateVoitureComponent } from './update-voiture/update-voiture.component';
+import { VoitureDetailsComponent } from './voiture-details/voiture-details.component';
 
 
 const routes: Routes = [
@@ -20,6 +24,10 @@ const routes: Routes = [
   { path: 'appartement', component: AppartementComponent},
   { path: 'appartement/add/:id' , component: FormAppartementComponent},
   { path: 'residence/edit/:id', component: UpdateResidenceComponent},
+  { path: 'voiture', component: VoitureComponent},
+  { path: 'voiture/add', component: AddVoitureComponent},
+  { path: 'voiture/edit/:id', component: UpdateVoitureComponent},
+  { path: 'voiture/:id', component: VoitureDetailsComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
