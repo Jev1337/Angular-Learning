@@ -1,0 +1,97 @@
+<br>
+<div class="container mt-5">
+    <h1>Commande List</h1>
+    <div class="input-group mb-3">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Search commandes..."
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+        />
+    </div>
+    <div class="mb-3">
+
+    </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let commande of filteredCommandes">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">#{{ commande.id }}</h2>
+                    <h3 class="card-subtitle mb-2 text-muted">{{ commande.date }}</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of commande.items">
+                                <td>{{ item.id }} </td>
+                                <td>{{ item.price }} </td>
+                                <td>{{ item.name }} </td>
+                            </tr>
+                            <tr *ngIf="total[commande.id] > 0">
+                                <td></td>
+                                <td></td>
+                                <td>Total: {{ total[commande.id] }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--
+                    <div class="d-grid gap-2">
+                        <a (click)="openModal(commande)" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commandeModal">
+                            <i class="bi bi-geo-alt"></i> Reveal Address
+                        </a>
+                        <button [routerLink]= "['/commande/details/', commande.id]" class="btn btn-outline-warning">
+                            <i class="bi bi-eye"></i> View Details
+                        </button>
+                        <button [routerLink]="['/commande/edit/', commande.id]" class="btn btn-outline-primary">
+                            <i class="bi bi-pencil"></i> Edit
+                        </button>
+                        <a [routerLink]="['/appartement/add/1']" class="btn btn-success">
+                            <i class="bi bi-plus-circle"></i> Add Appartement
+                        </a>
+                        
+                        <button class="btn btn-outline-danger" (click)="toggleFavourites(commande.name)">
+                            <i class="bi" [ngClass]="{'bi-heart': !isFav(commande.name), 'bi-heart-fill': isFav(commande.name)}"></i>
+                            Favourite
+                        </button>
+                    </div>
+                    -->
+                    <button [routerLink]= "['/commande/details/', commande.id]" class="btn btn-outline-warning m-1">
+                        <i class="bi bi-eye"></i> View Details
+                    </button>
+                    <button class="btn btn-outline-danger" (click)="deleteCommande(commande.id)">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                    <button class="btn btn-outline-primary" (click)="calculateTotal(commande.id)">
+                        <i class="bi bi-tools"></i> Calculate Total
+                    </button>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="commandeModal" tabindex="-1" aria-labelledby="commandeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="commandeModalLabel">Commande Address</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>{{ selectedCommande?.address }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

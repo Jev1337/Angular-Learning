@@ -1,18 +1,115 @@
 {
-  "residence": [
+  "produit": [
     {
       "id": "1",
-      "name": "El fel",
-      "address": "Borj Cedria",
-      "image": "../../assets/images/R1.jpg",
-      "status": "Disponible"
+      "price": 10,
+      "name": "Produit 1"
+    },
+    {
+      "id": "2",
+      "price": 20,
+      "name": "Produit 2"
     },
     {
       "id": "3",
-      "name": "El Arij",
-      "address": "Rades",
-      "status": "Vendu",
-      "image": "../../assets/images/R3.jpg"
+      "price": 30,
+      "name": "Produit 3"
+    },
+    {
+      "id": "4",
+      "price": 40,
+      "name": "Produit 4"
+    },
+    {
+      "id": "6",
+      "price": 60,
+      "name": "Produit 6"
+    },
+    {
+      "id": "7",
+      "price": 70,
+      "name": "Produit 7"
+    },
+    {
+      "id": "8",
+      "price": 80,
+      "name": "Produit 8"
+    },
+    {
+      "id": "9",
+      "price": 90,
+      "name": "Produit 9"
+    },
+    {
+      "id": "10",
+      "price": 100,
+      "name": "Produit 10"
+    }
+  ],
+  "commande": [
+    {
+      "id": "2",
+      "date": "2021-01-02",
+      "items": [
+        {
+          "id": 3,
+          "price": 30,
+          "name": "Produit 3"
+        },
+        {
+          "id": 4,
+          "price": 40,
+          "name": "Produit 4"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "date": "2021-01-03",
+      "items": [
+        {
+          "id": 5,
+          "price": 50,
+          "name": "Produit 5"
+        },
+        {
+          "id": 6,
+          "price": 60,
+          "name": "Produit 6"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "date": "2021-01-04",
+      "items": [
+        {
+          "id": 7,
+          "price": 70,
+          "name": "Produit 7"
+        },
+        {
+          "id": 8,
+          "price": 80,
+          "name": "Produit 8"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "date": "2021-01-05",
+      "items": [
+        {
+          "id": 9,
+          "price": 90,
+          "name": "Produit 9"
+        },
+        {
+          "id": 10,
+          "price": 100,
+          "name": "Produit 10"
+        }
+      ]
     }
   ]
 }

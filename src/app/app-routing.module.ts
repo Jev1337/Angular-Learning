@@ -9,6 +9,10 @@ import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { AppartementComponent } from './appartement/appartement.component';
 import { FormAppartementComponent } from './form-appartement/form-appartement.component';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+import { ProduitDetailsComponent } from './produit-details/produit-details.component';
+import { ProduitComponent } from './produit/produit.component';
+import { CommandeComponent } from './commande/commande.component';
+import { CommandeDetailsComponent } from './commande-details/commande-details.component';
 
 
 const routes: Routes = [
@@ -20,6 +24,10 @@ const routes: Routes = [
   { path: 'appartement', component: AppartementComponent},
   { path: 'appartement/add/:id' , component: FormAppartementComponent},
   { path: 'residence/edit/:id', component: UpdateResidenceComponent},
+  { path: 'produit/details/:id', component: ProduitDetailsComponent},
+  { path: 'produit', component: ProduitComponent},
+  { path: 'commande', component: CommandeComponent},
+  { path: 'commande/details/:id', component: CommandeDetailsComponent},
   { path: '**', component: NotFoundComponent }
 ];
 

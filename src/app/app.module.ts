@@ -18,6 +18,10 @@ import { FormAppartementComponent } from './form-appartement/form-appartement.co
 import { AppartementComponent } from './appartement/appartement.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+import { CommandeComponent } from './commande/commande.component';
+import { ProduitComponent } from './produit/produit.component';
+import { ProduitDetailsComponent } from './produit-details/produit-details.component';
+import { CommandeDetailsComponent } from './commande-details/commande-details.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { UpdateResidenceComponent } from './update-residence/update-residence.co
     FormAppartementComponent,
     AppartementComponent,
     UpdateResidenceComponent,
+    CommandeComponent,
+    ProduitComponent,
+    ProduitDetailsComponent,
+    CommandeDetailsComponent,
   ],
   imports: [
     BrowserModule,
