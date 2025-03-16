@@ -47,10 +47,12 @@ export class AddResidenceComponent {
   }
   addResidence(){
     console.log(this.residence);
-    this.residenceService.addResidence(this.addResidenceForm.value).subscribe(()=>{
-      console.log("Residence Added !");
-      this.router.navigateByUrl('/residence')
-    })
+    if (this.addResidenceForm.valid) {
+      this.residenceService.addResidence(this.addResidenceForm.value).subscribe(()=>{
+        console.log("Residence Added !");
+        this.router.navigateByUrl('/residence')
+      })
+    }
   }
 
 }
