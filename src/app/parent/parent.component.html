@@ -1,0 +1,7 @@
+<div class="container mt-5">
+    <h1>Fils</h1>
+    <app-enfant [message]="parentMessage" (messageEvent)="receiveMessage($event)"></app-enfant>
+    <hr>
+    <h1></h1>
+    <p>Message reçu de l'enfant : {{ childMessage }}</p>
+</div>
