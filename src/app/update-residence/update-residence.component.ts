@@ -24,9 +24,13 @@ ngOnInit(): void {
   console.log("update residence");
   this.id = this.activatedRoute.snapshot.paramMap.get('id')!;
   console.log("id", this.id);
-  
-
- 
+  /*
+  this.updateResidenceForm = new FormGroup({
+    name: new FormControl(this.residence.name, [Validators.required, Validators.minLength(3)]),
+    address: new FormControl(this.residence.address, Validators.required),
+    status: new FormControl(this.residence.status, Validators.required),
+    image: new FormControl(this.residence.image, Validators.required),
+  }); */
 
   this.residenceService.findResidenceById(this.id).subscribe((data)=>{
     this.residence = data;
@@ -38,6 +42,14 @@ ngOnInit(): void {
       status: new FormControl(this.residence.status, Validators.required),
       image: new FormControl(this.residence.image, Validators.required),
     });
+    /*
+    this.updateResidenceForm.patchValue({
+      name: this.residence.name,
+      address: this.residence.address,
+      status: this.residence.status,
+      image: this.residence.image
+    });
+    */
   });
 }
 

@@ -9,6 +9,7 @@ import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { AppartementComponent } from './appartement/appartement.component';
 import { FormAppartementComponent } from './form-appartement/form-appartement.component';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+import { ParentComponent } from './parent/parent.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'appartement', component: AppartementComponent},
   { path: 'appartement/add/:id' , component: FormAppartementComponent},
   { path: 'residence/edit/:id', component: UpdateResidenceComponent},
+  { path: 'parent', component: ParentComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
